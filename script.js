@@ -2,12 +2,12 @@
 function iniciarJogoNumeroSecreto() {
   alert("Bem-vindo ao Jogo do Número Secreto!");
 
-  const numeroSecreto = Math.floor(Math.random() * 100) + 1;
+  const numeroSecreto = Math.floor(Math.random() * 10) + 1;
   let tentativa;
   let acertou = false;
 
   while (!acertou) {
-    tentativa = prompt("Adivinhe o número secreto (entre 1 e 100):");
+    tentativa = prompt("Adivinhe o número secreto (entre 1 e 10):");
 
     if (tentativa === null) {
       alert("Jogo cancelado.");
@@ -16,12 +16,8 @@ function iniciarJogoNumeroSecreto() {
 
     const numeroTentativa = parseInt(tentativa);
 
-    if (
-      isNaN(numeroTentativa) ||
-      numeroTentativa < 1 ||
-      numeroTentativa > 100
-    ) {
-      alert("Por favor, digite um número válido entre 1 e 100.");
+    if (isNaN(numeroTentativa) || numeroTentativa < 1 || numeroTentativa > 10) {
+      alert("Por favor, digite um número válido entre 1 e 10.");
     } else if (numeroTentativa === numeroSecreto) {
       acertou = true;
       alert(`Parabéns! Você acertou! O número secreto era ${numeroSecreto}.`);
